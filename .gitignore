@@ -1,0 +1,25 @@
+# Temp files from editors
+*~
+*.bak
+.DS_Store
+.buildpath
+.project
+.settings
+*.tmproj
+.idea
+nbproject/
+.vs
+
+# Hidden files created by Windows
+Thumbs.db
+desktop.ini
+
+# Ignore Node modules
+node_modules
+package-lock.json
+
+# Ignore .env
+.env
+
+# Ignore vendor
+vendor

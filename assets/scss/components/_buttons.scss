@@ -1,0 +1,336 @@
+/*
+    ==== BUTTONS ====
+
+    Component description:
+        Website buttons.
+    
+    Modificators:
+        
+    1. Button off
+
+        Description:             Button style for off background. It has 3 variation: .button-off--(primary || secondary || tertiary)
+        Hook element selector:   button, a
+        Class to add:            button--off
+*/
+
+@use "../variables" as vars;
+
+button,
+.button {
+    width: auto;
+    display: inline-block;
+    margin: 0;
+    padding: 13px 50px 13px;
+    border: 1px solid transparent;
+    outline: none;
+    cursor: pointer;
+    @include vars.font(vars.$font-primary-regular, normal, 2rem, 2.2rem);
+    transition: 0.3s ease;
+    color: vars.$text-primary-color;
+    text-decoration: none;
+
+    &:hover {
+        transition: 0.3s ease;
+    }
+
+    &[disabled='true'] {
+        opacity: 0.7;
+        cursor: not-allowed;
+    }
+}
+
+a.button:hover {
+    text-decoration: none
+}
+
+
+/*
+    ==== BUTTON OFF ====
+*/
+
+.button-off {
+    @extend .button;
+    letter-spacing: 1px;
+    background-color: transparent;
+    position: relative;
+    border: 1px solid vars.$brand-primary-color;
+    color: vars.$text-primary-color;
+
+    &::after {
+        @include vars.pseudo("", 100%, 100%, absolute);
+        content: "";
+        background-color: vars.$brand-tertiary-color;
+        z-index: -1;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+    }
+
+    &:hover::after {
+        top: 0px;
+        left: 0px;
+    }
+}
+
+.button-off--primary {
+    @extend .button-off;
+}
+
+.button-off--secondary {
+    @extend .button-off;
+    color: vars.$text-fifth-color;
+
+    &::after {
+        background-color: vars.$brand-secondary-color;
+    }
+}
+
+.button-off--tertiary {
+    @extend .button-off;
+    color: vars.$text-primary-color;
+
+    &::after {
+        background-color: vars.$brand-fifth-color;
+    }
+}
+
+
+/*
+    ==== BUBBLES BUTTON ====
+*/
+
+@keyframes translateToBottom {
+        
+    0% {
+        transform: translateY(0);
+    }
+    
+    50% {
+        transform: translateY(-10px);
+    }
+    
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes translateToTop {
+        
+    0% {
+        transform: translateY(0);
+    }
+    
+    50% {
+        transform: translateY(10px);
+    }
+    
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.button--bubbles {
+    @extend .button;
+    border: none;
+    color: vars.$text-primary-color;
+    filter: url('#gooey');
+    position: relative;
+    background-color: vars.$brand-tertiary-color;
+
+    &:hover {
+        background-color: #ffd20b;
+
+        .letter:nth-child(even) {
+            animation: translateToBottom 0.5s;
+            display: inline-block;
+        }
+        
+        .letter:nth-child(odd) {
+            animation: translateToTop 0.5s;
+            display: inline-block;
+        }
+
+        .bubbles .bubble {
+            background-color: #ffd20b;
+        }
+    }
+
+    svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    .bubbles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        .bubble {
+            background-color: vars.$brand-tertiary-color;
+            border-radius: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            z-index: -1;
+
+            @for $bubble from 1 through 10 {
+                &:nth-child(#{$bubble}) {
+                    $size: 25px;
+                    left: (random(90) + 10)+px;
+                    width: $size;
+                    height: $size;
+                    animation: move-#{$bubble} #{3 + $bubble*0.02}s infinite;
+                    animation-delay: #{$bubble*0.2}s;
+                }
+            }
+        }
+    }
+}
+
+@for $bubble from 1 through 10 {
+    @keyframes move-#{$bubble} {
+        0% {
+            transform: translate(0, 0);
+        }
+
+        99% {
+            transform: translate(0, -(random(80) + 50)+px);
+        }
+
+        100% {
+            transform: translate(0, 0);
+            opacity: 0;
+        }
+    }
+}
+
+.button-bubbles--primary {
+    @extend .button--bubbles;
+    color: vars.$white;
+
+    &:hover {
+        color: vars.$brand-primary-color;
+    }
+}
+
+.button-bubbles--secondary {
+    @extend .button--bubbles;
+    background-color: vars.$brand-secondary-color;
+    color: vars.$text-fifth-color;
+
+    .bubbles .bubble {
+        background-color: vars.$brand-secondary-color;
+    }
+}
+
+.button-bubbles--tertiary {
+    @extend .button--bubbles;
+    background-color: vars.$brand-fifth-color;
+
+    &:hover {
+        background-color: #ffd20b;
+
+        .bubbles .bubble {
+            background-color: #ffd20b;
+        }
+    }
+
+    .bubbles .bubble {
+        background-color: vars.$brand-fifth-color;
+    }
+}
+
+button.hamburger-button {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    flex: 0;
+    padding: 5px;
+    background-color: transparent;
+
+    .btn-bar {
+        position: relative;
+        width: 25px;
+        height: 3px;
+        border-radius: 5px;
+        background: vars.$white;
+    }
+
+    .btn-bar.btn-bar--to-open {
+        transition: transform 0.2s ease-in-out 0.2s, opacity 0.15s ease-in-out 0.2s;
+    }
+
+    .btn-bar.btn-bar--to-open:nth-child(2n) {
+        width: 32px;
+    }
+
+    .btn-bar.btn-bar--to-open {
+        transition: transform 0.2s ease-in-out 0.2s, opacity 0.15s ease-in-out 0.2s;
+    }
+
+    .btn-bar.btn-bar--to-close {
+        transform-origin: center center;
+        position: absolute;
+        margin-top: -1.5px;
+        opacity: 0;
+        top: 50%;
+    }
+
+    .btn-bar.btn-bar--to-close:not(:last-child) {
+        transform: rotate(45deg) translateX(-250%);
+    }
+
+    .btn-bar.btn-bar--to-close:last-child {
+        transform: rotate(-45deg) translateX(250%);
+    }
+
+    .btn-bar.btn-bar--to-open:not(:first-child) {
+        margin-top: 3px;
+    }
+
+    // Active button transformaton
+    &.active {
+
+        .btn-bar.btn-bar--to-open {
+            opacity: 0;
+        }
+
+        .btn-bar.btn-bar--to-close {
+            opacity: 1;
+        }
+
+        .btn-bar.btn-bar--to-open:nth-child(2n+1) {
+            transform: translateX(-400%);
+        }
+
+        .btn-bar.btn-bar--to-open:nth-child(2n) {
+            transform: translateX(200%);
+        }
+
+        .btn-bar.btn-bar--to-close:not(:last-child) {
+            transform: rotate(45deg);
+        }
+
+        .btn-bar.btn-bar--to-close:last-child {
+            transform: rotate(-45deg);
+        }
+
+        .btn-bar.btn-bar--to-close {
+            transition: transform 0.3s ease-in-out 0.2s, opacity 0.05s ease-in-out 0.3s;
+        }
+    }
+}

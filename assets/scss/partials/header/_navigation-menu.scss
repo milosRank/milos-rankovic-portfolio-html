@@ -1,0 +1,348 @@
+/*
+    ==== NAVIGATION MENU ====
+
+    Description: 
+        This is navigation menu in header.
+    
+    Modificators:
+        No modificators.
+*/
+
+@use "../.././variables" as vars;
+
+
+// Breakpoiont on which navigation menu is moved to sidebar.
+$move_to_sidebar_breakpoint: 1199px;
+
+header .navigation-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    & > ul {
+        display: flex;
+        align-items: center;
+    }
+
+    ul li {
+        position: relative;
+        padding-left: 0;
+        list-style: none;
+        display: inline-block;
+        margin-right: 20px;
+        padding-left: 0;
+        margin-bottom: 0;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &::before {
+            content: none;
+        }
+
+        &.active-section {
+
+            a {
+                background: linear-gradient(to right, #5B86E5, #48ACE0, #36D1DC);
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+                transition: 0.2s ease;
+            }
+        }
+    }
+
+    ul li a {
+        display: inline-block;
+        font-size: inherit;
+        line-height: inherit;
+        text-decoration: none;
+        color: vars.$white;
+        padding: 10px 15px;
+    }
+
+    ul li:not(.active-section):hover {
+        transition: 0.2s cubic-bezier(0.215, 0.610, 0.355, 1);
+    }
+
+    /*
+        ==== FIRST LEVEL ====
+    */
+
+    // Parent
+    & > ul {
+
+        // Item
+        & > li {
+            background: linear-gradient(0deg, vars.$white, vars.$white) no-repeat right bottom / 0 var(--bg-h);
+            transition: background-size 350ms;
+            --bg-h: 2px;
+
+            &:where(:hover, :focus-visible) {
+                background-size: 100% var(--bg-h);
+                background-position-x: left;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+
+
+// RESPONSIVE
+
+@media(max-width: $move_to_sidebar_breakpoint) {
+
+    header .navigation-menu {
+        position: fixed;
+        top: var(--headerHeight, 100px);
+        right: 0;
+        height: calc(100% - var(--headerHeight, 100px));
+        overflow-y: scroll;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        align-items: flex-start;
+        width: 350px;
+        transform: translateX(100%);
+        transition: transform 0.4s ease-out;
+        padding-bottom: 100px;
+        background-color: vars.$brand-sixth-color;
+        box-shadow: 7px 39px 12px 10px rgba(0,0,0,0.2);
+
+        &.active {
+            transform: translateX(0);
+            transition: transform 0.4s ease-out;
+        }
+
+        // Global
+        ul {
+            background-color: transparent;
+        }
+
+        ul li {
+            width: 100%;
+            display: block;
+        }
+
+        /*
+            ==== FIRST LEVEL ====
+        */
+
+        // Parent
+        & > ul {
+            width: 100%;
+            max-height: 100%;
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            flex-direction: column;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            // Item
+            & > li {
+                padding-bottom: 10px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-right: 0;
+
+                &.dropdown-parent:not(:last-child) > .dropdown-button {
+                    right: 48px;
+                }
+
+                &:not(.active-section),
+                & {
+                    background: none;
+
+                    &:hover {
+
+                        &::after {
+                            width: calc(100% - 60px);
+                            transition: 0.3s ease;
+                        }
+                    }
+                }
+
+                &.active-section a {
+
+                    &::before {
+                        background: transparent;
+                        box-shadow: none;
+                        animation: none;
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    bottom: 0;
+                    top: unset;
+                    transform: none;
+                    width: calc(100% - 60px);
+                    height: 1px;
+                    background-image: none;
+                    left: 30px;
+                    right: 30px;
+                    background-color: #0b1939;
+                }
+
+                &::after {
+                    content: "";
+                    display: inline-block;
+                    bottom: 0;
+                    top: unset;
+                    transform: none;
+                    width: calc(100% - 60px);
+                    height: 2px;
+                    background-image: none;
+                    left: 30px;
+                    right: 30px;
+                    background-color: vars.$white;
+                    width: 0;
+                    transition: 0.3s ease;
+                    position: absolute;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                    border-bottom: none;
+                }
+
+                & > .dropdown-button {
+                    top: 11px;
+                    right: 48px;
+                }
+
+                & > a {
+                    color: vars.$white;
+                    transition: 0.2s ease;
+                }
+
+                & > a:hover {
+                    transform: translateX(5px);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        /*
+            ==== SECOND LEVEL ====
+        */
+
+        // Parent
+        & > ul > li > ul {
+            position: static;
+            min-width: unset;
+            width: 100%;
+            transform: translateY(0);
+            border-radius: 0;
+            padding-bottom: 0;
+            padding-top: 20px;
+            padding-right: 0;
+            background-color: transparent;
+            box-shadow: none;
+
+            &::before {
+                content: none;
+            }
+
+            // Item
+            & > li {
+                padding-bottom: 10px;
+                padding-top: 0;
+
+                & > a {
+                    color: vars.$white;;
+                }
+
+                &:first-child {
+                    padding-top: 0;
+                }
+
+                &:last-child {
+                    padding-bottom: 10px;
+                }
+
+                & > .dropdown-button {
+                    top: 0;
+                    right: -10px;
+                }
+            }
+        }
+
+        /*
+            ==== THIRD LEVEL ====
+        */
+
+        // Parent
+        & > ul > li > ul > li > ul {
+
+            // Item
+            & > li {
+
+                & > a {
+                    color: vars.$white;;
+                }
+            }
+        }
+    }
+
+    header button.hamburger-button {
+        display: flex;
+        margin-right: -5px;
+    }
+}
+
+@media(max-width: 500px) {
+
+    header .navigation-menu {
+        width: 100%;
+
+        /*
+            ==== FIRST LEVEL ====
+        */
+
+        // Parent
+        & > ul {
+
+            // Item
+            & > li {
+                padding-left: 15px;
+                padding-right: 15px;
+
+                &:not(.active-section),
+                & {
+                    background: none;
+                }
+
+                &.dropdown-parent:not(:last-child) > .dropdown-button {
+                    right: 6px;
+                }
+
+                &.dropdown-parent:not(:last-child) {
+                    padding-right: 15px;
+                }
+
+                & > .dropdown-button {
+                    right: 6px;
+                }
+            }
+        }
+    }
+}

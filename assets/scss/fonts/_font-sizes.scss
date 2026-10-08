@@ -1,0 +1,40 @@
+/*
+    ==== FONT SIZES ====
+
+    Description:
+        All font sizes used accros the project.
+    
+    Modificators:
+        No modificators.
+        
+*/
+
+@use "variables" as vars;
+
+.font--extra-small {
+    font-size: vars.$fs-extra-small;
+}
+
+.font--small {
+    font-size: vars.$fs-small;
+}
+
+.font--medium-small {
+    font-size: vars.$fs-medium-small;
+}
+
+.font--medium {
+    font-size: vars.$fs-medium;
+}
+
+.font--large {
+    font-size: vars.$fs-large;
+}
+
+.font--medium-large {
+    font-size: vars.$fs-medium-large;
+}
+
+.font--extra-large {
+    font-size: vars.$fs-extra-large;
+}

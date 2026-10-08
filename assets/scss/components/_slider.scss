@@ -1,0 +1,65 @@
+/*
+    ==== SLIDER ====
+
+    Component description:
+        Website buttons.
+    
+    Modificators:
+        No modificators.
+*/
+
+@use "../variables" as vars;
+
+.slider-controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.slider-control {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 30px;
+    position: relative;
+    background: transparent;
+    border: 1px solid vars.$brand-fifth-color;
+    padding: 0;
+    border-radius: 10px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 33px;
+        height: 35px;
+        background-image: url("../../img/icons/arrows/arrow-left-yellow.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover {
+        background-color: vars.$brand-fifth-color;
+
+        &::before {
+            background-image: url("../../img/icons/arrows/arrow-left-dark-grey.svg");
+        }
+    }
+
+
+    &.slider-control--next {
+
+        &::before {
+            background-image: url("../../img/icons/arrows/arrow-right-yellow.svg");
+        }
+
+        &:hover {
+
+            &::before {
+                background-image: url("../../img/icons/arrows/arrow-right-dark-grey.svg");
+            }
+        }
+    }
+}

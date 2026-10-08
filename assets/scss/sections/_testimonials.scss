@@ -1,0 +1,133 @@
+/*
+    ==== TESTIMONIALS SECTION ====
+
+    Description: 
+        Testimonials section.
+    
+    Modificators:
+        No modificators.
+
+*/
+
+@use "../variables" as vars;
+
+.testimonials {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    .heading {
+        margin-bottom: 100px;
+
+        .title {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: vars.$fs-medium-large;
+                line-height: calc(vars.$fs-medium-large + 1rem);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .swiper-slide {
+
+        .slider__inner {
+
+            .image {
+                margin-bottom: 30px;
+
+                img {
+                    max-width: 100%;
+                    width: 500px;
+                    height: 267px;
+                    object-fit: cover;
+                    object-position: top;
+                }
+            }
+
+            .title {
+                margin-bottom: 10px;
+            }
+
+            .title > * {
+                margin-top: 0;
+                margin-bottom: 0;
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+
+            .content {
+                max-width: 500px;
+            }
+
+            .content .position {
+                margin-bottom: 10px;
+            }
+
+            .content .project {
+                background: linear-gradient(to right, #5B86E5, #48ACE0, #36D1DC);
+                background-clip: border-box;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+
+                a {
+                    text-decoration: none;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media(max-width: 767px) {
+
+    .testimonials {
+
+        .heading .title {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: vars.$fs-large;
+                line-height: 5.5rem;
+            }
+        }
+    }
+}
+
+
+@media(max-width: 575px) {
+
+    .testimonials {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .heading .title {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: vars.$fs-medium;
+                line-height: 4.5rem;
+            }
+        }
+    }
+}

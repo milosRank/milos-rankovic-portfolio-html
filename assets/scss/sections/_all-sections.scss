@@ -1,0 +1,19 @@
+/*
+    File Name: all-sections.scss
+
+    Description:
+    This is the all-secitons SCSS file that imports all sections SCSS files.
+
+    Note:
+    This file should not contain any actual CSS styles. Its purpose is to
+    bring together all the necessary styles from the smaller SCSS files.
+    Any direct styles added to this file may be overridden by the imported files.
+
+*/
+
+@import "hero-section";
+@import "contact";
+@import "services";
+@import "projects";
+@import "pricing";
+@import "testimonials";

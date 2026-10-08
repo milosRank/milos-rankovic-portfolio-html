@@ -1,0 +1,42 @@
+/*
+    ==== BACKGROUND COLORS ====
+
+    Description:
+        Background colors used accros the project.
+    
+    Modificators:
+        No modificators.
+        
+*/
+
+@use "../variables" as vars;
+
+// Background colors
+
+.bg-white {
+    background-color: vars.$white;
+}
+
+.bg-pure-black {
+    background-color: vars.$pure-black;
+}
+
+.bg-dark-blue {
+    background-color: vars.$dark-blue;
+}
+
+.bg-dark-grey {
+    background-color: vars.$dark-grey;
+}
+
+.bg-light-blue {
+    background-color: vars.$light-blue;
+}
+
+.bg-whiteish {
+    background-color: vars.$whiteish;
+}
+
+.bg-blue-green-gradient {
+    background: vars.$bg-blue-green-gradient; // Blue - Green
+}

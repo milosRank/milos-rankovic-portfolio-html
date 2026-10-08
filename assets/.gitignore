@@ -1,0 +1,6 @@
+# Ignore generated CSS files
+css/*
+!css/.gitkeep
+!css/build/
+css/build/*
+!css/build/.gitkeep

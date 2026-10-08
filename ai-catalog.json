@@ -1,0 +1,17 @@
+{
+    "name": "sajtpomeri.com",
+    "description": "Website dedicated to presenting web development and design services.",
+    "url": "https://sajtpomeri.com/",
+    "type": "website",
+    "author": {
+        "name": "Miloš Ranković",
+        "email": "mrankovic310@gmail.com"
+    },
+    "pages": [
+        {
+            "name": "Home",
+            "url": "https://sajtpomeri.com/",
+            "description": "Main and only page with projects, services, and contact form."
+        }
+    ]
+}

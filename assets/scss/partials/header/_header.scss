@@ -1,0 +1,58 @@
+/*
+    ==== HEADER ====
+
+    Description: 
+        This is header of website. Also, this file contains style for main site menu.
+    
+    Modificators:
+        No modificators.
+*/
+
+@use "../.././variables" as vars;
+@import "navigation-menu"; // Import navigation menu styles
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+    background-color: vars.$dark-grey;
+    padding: 10px 0;
+    min-height: 126px;
+
+    button.hamburger-button {
+        display: none;
+    }
+
+    &.hide {
+        transform: translateY(-100%);
+    }
+
+    &.floating-header {
+        box-shadow: 0px 5px 9.5px 0.5px rgba(0, 0, 0, 0.15);
+    }
+
+    .header__inner {
+        display: flex;
+        gap: 50px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo-holder {
+        width: 100px;
+    }
+}
+
+@media(max-width: 1199px) {
+    
+    header {
+        
+        button.hamburger-button {
+            display: flex;
+        }
+    }
+}

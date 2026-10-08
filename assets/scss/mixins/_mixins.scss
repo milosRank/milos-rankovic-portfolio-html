@@ -1,0 +1,52 @@
+// ==== Mixins ====
+
+// Make a pseudo element
+@mixin pseudo($content, $width, $height, $position) {
+    content: $content;
+    display: block;
+    width: $width;
+    height: $height;
+    position: $position;
+}
+
+// Make a flex element with its settings
+@mixin flex($horizontal, $vertical, $direction, $wrap) {
+    display: flex;
+    align-items: $horizontal;
+    justify-content: $vertical;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
+}
+
+// Font settings
+@mixin font($fontfamily, $fontweight, $fontsize, $lineheight) {
+    font-family: $fontfamily;
+    font-weight: $fontweight;
+    font-size: $fontsize;
+    line-height: $lineheight;
+}
+
+// Mobile spacing
+@mixin mobilePaddingTop($paddingTop) {
+
+    &,
+    &.padding-top-0,
+    &.padding-top-50,
+    &.padding-top-100,
+    &.padding-top-150,
+    &.padding-top-200 {
+        padding-top: $paddingTop !important;
+    }
+}
+
+@mixin mobilePaddingBottom($paddingBottom) {
+
+    &,
+    &.padding-bottom-0,
+    &.padding-bottom-50,
+    &.padding-bottom-100,
+    &.padding-bottom-150,
+    &.padding-bottom-200 {
+        padding-bottom: $paddingBottom !important;
+    }
+}

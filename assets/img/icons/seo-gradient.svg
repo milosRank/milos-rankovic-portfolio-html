@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 512.07" width="120" height="88">
+    <defs>
+        <style>
+            .cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}
+        </style>
+        <linearGradient id="linear-gradient" x1="7.4" y1="256.04" x2="519.37" y2="256.04" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#848484" />
+            <stop offset="0" stop-color="#5b86e5" />
+            <stop offset="1" stop-color="#36d1dc" />
+        </linearGradient>
+        <linearGradient id="linear-gradient-2" x1="-9.84" y1="349.26" x2="566.24" y2="349.26" gradientTransform="matrix(1.22, 0, 0, -1.22, 11.96, 618.79)" xlink:href="#linear-gradient" />
+    </defs>
+    <title>SEO</title>
+    <g id="Layer_2" data-name="Layer 2">
+        <g id="Layer_1-2" data-name="Layer 1">
+            <path class="cls-1" d="M423.4,208a207.49,207.49,0,0,1-40,122.7L510,457.4a32,32,0,0,1-45.3,45.3L338.1,376a206.81,206.81,0,0,1-122.7,40c-114.9,0-208-93.1-208-208S100.5,0,215.4,0,423.4,93.1,423.4,208Zm-208,144a144,144,0,1,0-144-144A144,144,0,0,0,215.4,352Z" />
+            <g id="Layer_2-2" data-name="Layer 2">
+                <g id="Layer_1-2-2" data-name="Layer 1-2">
+                    <path class="cls-2" d="M466.7,77.77A38.89,38.89,0,0,1,466.7,0H661.12A38.88,38.88,0,0,1,700,38.88V233.3a38.88,38.88,0,1,1-77.76,0V132.81L416.4,338.53a38.88,38.88,0,0,1-55,.05l-.06-.05-128-127.95-167,166.83a38.92,38.92,0,0,1-55-55h0L205.82,128a38.88,38.88,0,0,1,55,0l.05,0L388.94,256,567.19,77.77Z" />
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

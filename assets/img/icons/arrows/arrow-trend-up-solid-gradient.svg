@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 576.08 319.98" width="700" height="389">
+	<defs>
+		<style>
+			.cls-1{fill:url(#linear-gradient);}
+		</style>
+		<linearGradient id="linear-gradient" y1="159.99" x2="576.08" y2="159.99" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#848484" />
+			<stop offset="0" stop-color="#5b86e5" />
+			<stop offset="1" stop-color="#36d1dc" />
+		</linearGradient>
+	</defs>
+	<title>Arrow trend up solid gradient</title>
+	<g id="Layer_2" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1">
+			<path class="cls-1" d="M384.08,64a32,32,0,0,1,0-64h160a32,32,0,0,1,32,32V192a32,32,0,0,1-64,0V109.3L342.68,278.6a32,32,0,0,1-45.3,0L192.08,173.3,54.67,310.6A32,32,0,1,1,9.38,265.3l160-160a32,32,0,0,1,45.3,0l105.4,105.4L466.78,64Z" />
+		</g>
+	</g>
+</svg>

@@ -1,0 +1,16 @@
+/*
+    File Name: _variables.scss
+
+    Description:
+    This is the variables SCSS file that imports all variables that are used all over project.
+
+    Note:
+    This file should not contain any actual CSS styles. Its purpose is to
+    bring together all the variables that are used accros project.
+    Any direct styles added to this file may be overridden by the imported files.
+
+*/
+
+@import "./colors/variables";
+@import "./fonts/variables";
+@import "./mixins/mixins";

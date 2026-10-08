@@ -1,0 +1,15 @@
+/*
+    File Name: _fonts.scss
+
+    Description:
+    This is the fonts SCSS file that imports styles realted to fonts.
+
+    Note:
+    This file should not contain any actual CSS styles. Its purpose is to
+    bring together all the variables that are used accros project.
+    Any direct styles added to this file may be overridden by the imported files.
+
+*/
+
+@import "font-family";
+@import "font-sizes";

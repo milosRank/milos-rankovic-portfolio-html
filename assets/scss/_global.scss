@@ -1,0 +1,382 @@
+/*
+    ==== GLOBALS ====
+
+    Description:
+        Global styles.
+    
+    Modificators:
+        No modificators.
+        
+*/
+
+@use "variables" as vars;
+
+:root {
+    font-size: 62.5%; // We are changing the value of rem to 1rem = 10px instead of default 1rem = 16px because of the easier calculations
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    scroll-margin-top: 50px;
+}
+
+html.screen-locked {
+    overflow-y: hidden;
+    padding-right: var(--scrollbarWidth, 17px);
+
+    header {
+        padding-right: var(--scrollbarWidth, 17px);
+    }
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: vars.$font-primary-regular;
+    font-size: vars.$fs-small;
+    color: vars.$text-primary-color;
+    padding-top: var(--headerHeight);
+}
+
+
+
+// ==== Text elements ====
+
+h1 {
+    @include vars.font(vars.$font-primary-bold, normal, vars.$fs-extra-large, calc(vars.$fs-extra-large + 1rem));
+    margin-top: 70px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    @include vars.font(vars.$font-primary-bold, normal, vars.$fs-medium-large, calc(vars.$fs-medium-large + 1rem));
+    margin-top: 70px;
+    margin-bottom: 35px;
+}
+
+h3 {
+    @include vars.font(vars.$font-primary-bold, normal, vars.$fs-large, calc(vars.$fs-large + 1rem));
+    margin-top: 65px;
+    margin-bottom: 30px;
+}
+
+h4 {
+    @include vars.font(vars.$font-primary-bold, normal, vars.$fs-medium, calc(vars.$fs-medium + 1rem));
+    margin-top: 60px;
+    margin-bottom: 25px;
+}
+
+h5 {
+    @include vars.font(vars.$font-primary-bold, normal, vars.$fs-medium-small, calc(vars.$fs-medium-small + 1rem));
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+h6 {
+    @include vars.font(vars.$font-primary-bold, normal, vars.$fs-small, calc(vars.$fs-small + 1rem));
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: vars.$text-secondary-color;
+    font-size: vars.$fs-small;
+    line-height: vars.$fs-small;;
+}
+
+p {
+    font-size: vars.$fs-small;
+    line-height: 3.2rem;
+}
+
+strong {
+    font-family: vars.$font-primary-semi-bold;
+}
+
+.dot {
+    color: vars.$text-sixth-color;
+}
+
+.heading {
+
+    .title:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    .subtitle {
+
+        *:first-child {
+            margin-top: 0;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+// ==== Block elements ====
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+section {
+    position: relative;
+
+    .section-bg-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        &.overlay::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            background: vars.$brand-sixth-color;
+            opacity: 0.85;
+        }
+    }
+
+    .section-bg-image.not-cover {
+        width: auto;
+        height: auto;
+        object-fit: unset;
+
+        img {
+            width: auto;
+            height: auto;
+            object-fit: unset;
+            left: unset;
+            top: 0;
+        }
+
+        &.overlay::before {
+            opacity: 0.5;
+        }
+    }
+
+    .container-fluid {
+        position: relative;
+        z-index: 3;
+    }
+}
+
+blockquote {
+
+    border-radius: 12px;
+    font-style: italic;
+
+    & > img:first-child {
+        vertical-align: text-bottom;
+    }
+
+    & > img:last-child {
+        vertical-align: text-top;
+    }
+}
+
+.bg-dark-grey blockquote {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 25px 20px;
+    background-color: vars.$white;
+    color: vars.$text-primary-color;
+    font-size: 1.6rem;
+}
+
+
+// ==== Lists ====
+
+ul {
+    padding-left: 0;
+    list-style: none;
+    
+    li {
+        position: relative;
+        padding-left: 25px;
+
+        &:not(:last-child) {
+            margin-bottom: 7px;
+        }
+
+        &::before {
+            @include vars.pseudo("", 13px, 16px, absolute);
+            top: 5px;
+            left: 0;
+            background-image: url("../../img/icons/arrows/icon--arrow-blue.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+    }
+}
+
+ol {
+
+    li {
+
+        &::marker {
+            color: vars.$text-secondary-color;
+        }
+    }
+}
+
+
+// ==== Text aligment ====
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+
+
+// ==== Positioning ====
+
+.relative {
+    position: relative !important;
+}
+
+.absolute {
+    position: absolute !important;
+}
+
+
+// ==== IOS specifics ====
+
+.screen-locked.ios-device {
+    position: fixed;
+    touch-action: manipulation;
+    // user-scalable: no;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+
+// ==== Device specifics ====
+
+// IOS
+.screen-locked.ios-device {
+    position: fixed;
+}
+
+
+
+// ==== Background color modifications ====
+
+.bg-dark-grey,
+.bg-dark-blue,
+.bg-blue {
+    color: vars.$white;
+
+    p,
+    a:not(.button),
+    li {
+        color: inherit;
+    }
+}
+
+.spinner {
+    display: none;
+    width: 21px;
+    height: 21px;
+    margin-left: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    vertical-align: middle;
+
+    &.show {
+        display: inline-block;
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+
+
+// ==== Various ====
+
+// RESPONSIVE
+
+@media(max-width: 575px) {
+
+    // h1 {
+    //     @include vars.font(vars.$font-secondary-regular, normal, vars.$fs-medium-large, vars.$fs-medium-large);
+    //     margin-top: 65px;
+    //     margin-bottom: 30px;
+    // }
+
+    // h2 {
+    //     @include vars.font(vars.$font-secondary-regular, normal, 3.8rem, 3.8rem);
+    //     margin-top: 65px;
+    //     margin-bottom: 30px;
+    // }
+
+    // h3 {
+    //     @include vars.font(vars.$font-secondary-regular, normal, vars.$fs-large, vars.$fs-large);
+    //     margin-top: 65px;
+    //     margin-bottom: 30px;
+    // }
+
+    // h4 {
+    //     @include vars.font(vars.$font-secondary-regular, normal, 2.5rem, 2.5rem);
+    //     margin-top: 60px;
+    //     margin-bottom: 25px;
+    // }
+
+    // h5 {
+    //     @include vars.font(vars.$font-secondary-regular, normal, 2.2rem, 2.2rem);
+    //     margin-top: 40px;
+    //     margin-bottom: 20px;
+    // }
+
+    // h6 {
+    //     @include vars.font(vars.$font-secondary-regular, normal, vars.$fs-medium-small, vars.$fs-medium-small);
+    //     margin-top: 30px;
+    //     margin-bottom: 20px;
+    // }
+}

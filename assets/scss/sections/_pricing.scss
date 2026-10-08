@@ -1,0 +1,107 @@
+/*
+    ==== PRICING SECTION ====
+
+    Description: 
+        pricing section of website.
+
+    Modificators:
+        No modificators.
+
+*/
+
+@use "../variables" as vars;
+
+.pricing {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    scroll-margin-top: 150px;
+
+    .heading {
+        margin-bottom: 50px;
+
+        .title {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: vars.$fs-medium-large;
+                line-height: calc(vars.$fs-medium-large + 1rem);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .text {
+
+        & > *:first-child {
+            margin-top: 0;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+// RESPONSIVE
+
+@media(min-width: 992px) {
+
+    .pricing__inner .cta-and-text {
+        display: flex;
+        align-items: center;
+        gap: 70px;
+
+        .section-cta {
+            min-width: 300px;
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+
+    .pricing {
+
+        .heading .title {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: vars.$fs-large;
+                line-height: 5.5rem;
+            }
+        }
+    }
+}
+
+@media(max-width:575px) {
+
+    .pricing {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        .heading .title {
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-size: vars.$fs-medium;
+                line-height: 4.5rem;
+            }
+        }
+    }
+}

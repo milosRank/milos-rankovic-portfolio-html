@@ -1,0 +1,32 @@
+/*
+    ==== FONT.VARIABLES ====
+
+    Description:
+        All variables related to fonts.
+    
+    Modificators:
+        No modificators.
+        
+*/
+
+// ==== Font family =====
+
+// Primary font
+
+$font-primary-regular: "primary-regular", Arial, Helvetica, sans-serif;
+$font-primary-medium: "primary-medium", Arial, Helvetica, sans-serif;
+$font-primary-light: "primary-light", Arial, Helvetica, sans-serif;
+$font-primary-semi-bold: "primary-semi-bold", Arial, Helvetica, sans-serif;
+$font-primary-bold: "primary-bold", Arial, Helvetica, sans-serif;
+$font-primary-italic: "primary-italic", Arial, Helvetica, sans-serif;
+
+
+// ==== Font sizes ====
+
+$fs-extra-small: 1.4rem;
+$fs-small: 2rem;
+$fs-medium-small: 3rem;
+$fs-medium: 4rem;
+$fs-large: 5rem;
+$fs-medium-large: 6rem;
+$fs-extra-large: 7rem;

@@ -1,0 +1,15 @@
+/*
+    File Name: _partials.scss
+
+    Description:
+    This is the partials SCSS file that imports all partials.
+
+    Note:
+    This file should not contain any actual CSS styles. Its purpose is to
+    bring together all the variables that are used accros project.
+    Any direct styles added to this file may be overridden by the imported files.
+
+*/
+
+@import "./header/header";
+@import "./footer/footer";

@@ -1,0 +1,175 @@
+/*
+    ==== FORM ELEMENTS ====
+
+    Component description:
+        Form elements of website.
+    
+    Modificators:
+        No modificators.
+*/
+
+@use "../variables" as vars;
+
+$gray: #dadadb;
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $gray;
+    color: vars.$text-primary-color;
+    background-color: transparent;
+    @include vars.font(vars.$font-primary-regular, initial, vars.$fs-small, vars.$fs-small);
+
+    &:focus {
+        outline: none;
+    }
+
+    &.active:focus {
+        border: 1px solid $gray;
+    }
+
+    &.active {
+        outline: none;
+        border: 1px solid vars.$brand-secondary-color;
+
+        & + label {
+            color: vars.$text-secondary-color;
+            transform: translateY(-12px);
+            bottom: unset;
+            font-size: 16px;
+            background-color: #fff;
+            transition: 0.2s ease;
+        } 
+    }
+}
+
+.input-wrapper {
+    position: relative;
+    z-index: 1;
+
+    &:not(:last-child) {
+        margin-bottom: 30px;
+    }
+
+    label {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        padding: 0 5px;
+        @include vars.font(vars.$font-primary-regular, initial, vars.$fs-small, 2.6rem);
+        color: vars.$brand-sixth-color;
+        cursor: text;
+        transition: 0.2s ease;
+    }
+
+    textarea + label {
+        bottom: unset;
+        top: 10px;
+    }
+}
+
+textarea {
+    width: 100%;
+    min-height: 150px;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    padding: 15px;
+    border: 1px solid #dadadb;
+    color: vars.$text-primary-color;
+    @include vars.font(vars.$font-primary-regular, initial, vars.$fs-small, 2.6rem);
+    
+    &:focus {
+        outline: none;
+    }
+
+    &.active:focus {
+        border: 1px solid $gray;
+    }
+
+    &.active {
+        outline: none;
+        border: 1px solid vars.$brand-secondary-color;
+
+        & + label {
+            color: vars.$text-secondary-color;
+            transform: translateY(-12px);
+            bottom: unset;
+            top: unset;
+            font-size: 16px;
+            background-color: #fff;
+            transition: 0.2s ease;
+        } 
+    }
+}
+
+.column-wrapper { 
+    margin-bottom: 30px;
+}
+
+// ==== Background color modifications ====
+
+.bg-dark-grey {
+
+    input,
+    textarea {
+        color: vars.$white;
+    }
+
+    input.active,
+    textarea.active {
+
+        & + label {
+            background-color: vars.$dark-grey;
+        }
+    }
+}
+
+.bg-whiteish {
+
+    input {
+        border-bottom: 1px solid #b5b5b9;
+    }
+    
+    textarea {
+        border-color: #b5b5b9;
+    }
+
+    input.active + label,
+    textarea.active + label {
+        background-color: vars.$whiteish;
+    }
+
+    input.active,
+    textarea.active {
+        border: 1px solid vars.$brand-sixth-color;
+
+        & + label {
+            background-color: vars.$whiteish;
+            color: vars.$brand-sixth-color;
+        }
+    }
+}
+
+.just-validate-error-label {
+    font-size: 14px;
+    position: absolute;
+}
+
+@media(min-width: 768px) {
+
+    .column-wrapper {
+        display: flex;
+        gap: 40px;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+
+        .input-wrapper {
+            width: calc(50% - 20px);
+            margin-bottom: 0;
+        }
+    }
+}

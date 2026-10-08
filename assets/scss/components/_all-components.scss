@@ -1,0 +1,16 @@
+/*
+    File Name: _components.scss
+
+    Description:
+    This is the components SCSS file that imports styles realted to components.
+
+    Note:
+    This file should not contain any actual CSS styles. Its purpose is to
+    bring together all the components that are used accros project.
+    Any direct styles added to this file may be overridden by the imported files.
+
+*/
+
+@import "buttons";
+@import "form-elements";
+@import "slider";

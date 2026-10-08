@@ -1,0 +1,32 @@
+/*
+    ==== COLORS ====
+
+    Description:
+        Colors used accross the project.
+    
+    Modificators:
+        No modificators.
+        
+*/
+
+@use "variables" as vars;
+
+.text-color-white {
+    color: vars.$text-fifth-color;
+}
+
+.text-color-black {
+    color: vars.$text-primary-color;
+}
+
+.text-color-dark-blue {
+    color: vars.$text-secondary-color;
+}
+
+.text-color-light-blue {
+    color: vars.$text-tertiary-color;
+}
+
+.text-color-whiteish {
+    color: vars.$text-fourth-color;
+}

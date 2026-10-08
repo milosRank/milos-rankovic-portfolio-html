@@ -1,0 +1,47 @@
+/*
+    ==== COLORS.VARIABLES ====
+
+    Description:
+        All variables related to colors.
+    
+    Modificators:
+        No modificators.
+*/
+
+
+// ==== Colors ====
+
+$white: #FFFFFF;
+$pure-black: #000000;
+$dark-blue: #0B60B0;
+$light-blue: #40A2D8;
+$whiteish: #F0EDCF;
+$yellow: #ffde4c;
+$dark-grey: #0F1C3B;
+
+
+
+// ==== Brand colors ====
+
+$brand-primary-color: $pure-black;
+$brand-secondary-color: $dark-blue;
+$brand-tertiary-color: $light-blue;
+$brand-fourth-color: $whiteish;
+$brand-fifth-color: $yellow;
+$brand-sixth-color: $dark-grey;
+
+
+
+// ==== Text colors ====
+
+$text-primary-color: $brand-primary-color;
+$text-secondary-color: $brand-secondary-color;
+$text-tertiary-color: $brand-tertiary-color;
+$text-fourth-color: $brand-fourth-color;
+$text-fifth-color: $white;
+$text-sixth-color: $yellow;
+
+
+// ====  Gradients ====
+
+$bg-blue-green-gradient: linear-gradient(to top, #5B86E5, #36D1DC); // Blue - Green

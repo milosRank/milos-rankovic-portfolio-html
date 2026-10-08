@@ -1,0 +1,50 @@
+/*
+    ==== FONT FAMILY ====
+
+    Description:
+        All font familys used accros the project.
+    
+    Modificators:
+        No modificators.
+        
+*/
+
+
+
+// Primary font family
+
+@font-face {
+    font-family: "primary-light";
+    src: url("../../fonts/SourceCodePro-Light.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "primary-regular";
+    src: url("../../fonts/SourceCodePro-Regular.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "primary-medium";
+    src: url("../../fonts/SourceCodePro-Medium.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "primary-semi-bold";
+    src: url("../../fonts/SourceCodePro-SemiBold.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "primary-bold";
+    src: url("../../fonts/SourceCodePro-Bold.woff2");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "primary-italic";
+    src: url("../../fonts/Poppins-Italic.woff2");
+    font-display: swap;
+}
